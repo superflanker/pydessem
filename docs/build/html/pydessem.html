@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pydessem package &mdash; pydessem 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pydessem" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pydessem
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pydessem</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pydessem package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem.cli">pydessem.cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem-cli">PyDessem CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem.cli.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem.io_loader">pydessem.io_loader module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem-i-o-loader">PyDessem I/O Loader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem.io_loader.load_case"><code class="docutils literal notranslate"><span class="pre">load_case()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem.model_core">pydessem.model_core module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem-core-model">PyDessem Core Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem.model_core.build_model"><code class="docutils literal notranslate"><span class="pre">build_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem.reporting">pydessem.reporting module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem-reporting">PyDessem Reporting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem.reporting.summarize_dispatch"><code class="docutils literal notranslate"><span class="pre">summarize_dispatch()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem.solve">pydessem.solve module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem-solver">PyDessem Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pydessem.solve.solve_case"><code class="docutils literal notranslate"><span class="pre">solve_case()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pydessem">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydessem</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">pydessem</a></li>
+      <li class="breadcrumb-item active">pydessem package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pydessem.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pydessem-package">
+<h1>pydessem package<a class="headerlink" href="#pydessem-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-pydessem.cli">
+<span id="pydessem-cli-module"></span><h2>pydessem.cli module<a class="headerlink" href="#module-pydessem.cli" title="Link to this heading"></a></h2>
+<section id="pydessem-cli">
+<h3>PyDessem CLI<a class="headerlink" href="#pydessem-cli" title="Link to this heading"></a></h3>
+<p>PyDessem Command-Line Interface (CLI) - Didactic DESSEM-like Hydrothermal Scheduling</p>
+<section id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h4>
+<p>This module implements the command-line interface for the PyDessem framework.
+It allows solving didactic short-term hydrothermal scheduling problems with
+unit commitment, piecewise-linear hydro production functions, and reserve
+requirements, using Pyomo as the modeling environment.</p>
+</section>
+<section id="author">
+<h4>Author<a class="headerlink" href="#author" title="Link to this heading"></a></h4>
+<p>Augusto Mathias Adams &lt;<a class="reference external" href="mailto:augusto&#46;adams&#37;&#52;&#48;ufpr&#46;br">augusto<span>&#46;</span>adams<span>&#64;</span>ufpr<span>&#46;</span>br</a>&gt;</p>
+</section>
+<section id="contents">
+<h4>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>main function: entrypoint for command-line execution.</p></li>
+<li><p>Argument parsing (argparse) for YAML input, solver selection, and JSON output.</p></li>
+<li><p>Integration with <cite>solve_case</cite> from the core PyDessem API.</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This module is part of the activities of the discipline
+EELT7030 - Planejamento da Operação Eletroenergética de Médio/Curto Prazo,
+Federal University of Paraná (UFPR), Brazil.</p>
+</section>
+<section id="dependencies">
+<h4>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>argparse</p></li>
+<li><p>json</p></li>
+<li><p>pyomo</p></li>
+<li><p>pyyaml</p></li>
+<li><p>pydessem.solve</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydessem.cli.main">
+<span class="sig-prename descclassname"><span class="pre">pydessem.cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydessem/cli.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydessem.cli.main" title="Link to this definition"></a></dt>
+<dd><p>Executes the command-line interface to solve a didactic DESSEM-like
+problem using Pyomo.</p>
+<p>The user provides a YAML file describing the case
+(buses, generators, reservoirs, demands, etc.), and the function
+calls the specified solver to obtain the optimal dispatch.
+Results can be printed in a human-readable format or in JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>None</strong> – The function does not take arguments directly; parameters are
+parsed from the command line using argparse.</p></li>
+<li><p><strong>yaml</strong> (<em>str</em>) – Path to the YAML file containing the case data.</p></li>
+<li><p><strong>--solver</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the solver to be used. Default is <code class="docutils literal notranslate"><span class="pre">&quot;glpk&quot;</span></code>.
+Examples: “cbc”, “gurobi”, “cplex”.</p></li>
+<li><p><strong>--json</strong> (<em>bool</em><em>, </em><em>optional</em>) – If specified, prints the result in JSON format.
+Otherwise, prints a summarized output to the terminal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Does not return a value. The function prints the results of the
+solved problem (objective and dispatch) to the terminal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires the specified solver to be installed and accessible</p></li>
+</ul>
+<p>in the system PATH.
+- Uses the <code class="docutils literal notranslate"><span class="pre">solve_case</span></code> function defined in <code class="docutils literal notranslate"><span class="pre">pydessem.solve</span></code>.
+- JSON output includes the objective value and variable series,
+such as generation per unit and time step.</p>
+<p class="rubric">Examples</p>
+<p>Run from the command line:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pydessem</span><span class="o">-</span><span class="n">solve</span> <span class="n">examples</span><span class="o">/</span><span class="n">case_tiny</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">solver</span> <span class="n">glpk</span>
+<span class="go">Objective: 1234.56</span>
+<span class="go">Generation (P[g,t]) - first 10:</span>
+<span class="go">G1 t=0: 20.00</span>
+<span class="go">G2 t=0: 30.00</span>
+</pre></div>
+</div>
+<p>Run with JSON output:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pydessem</span><span class="o">-</span><span class="n">solve</span> <span class="n">examples</span><span class="o">/</span><span class="n">case_tiny</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">solver</span> <span class="n">glpk</span> <span class="o">--</span><span class="n">json</span>
+<span class="go">{</span>
+<span class="go">&quot;objective&quot;: 1234.56,</span>
+<span class="go">&quot;P&quot;: {</span>
+<span class="go">    &quot;(&#39;G1&#39;, 0)&quot;: 20.0,</span>
+<span class="go">    &quot;(&#39;G2&#39;, 0)&quot;: 30.0,</span>
+<span class="go">    ...</span>
+<span class="go">}</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-pydessem.io_loader">
+<span id="pydessem-io-loader-module"></span><h2>pydessem.io_loader module<a class="headerlink" href="#module-pydessem.io_loader" title="Link to this heading"></a></h2>
+<section id="pydessem-i-o-loader">
+<h3>PyDessem I/O Loader<a class="headerlink" href="#pydessem-i-o-loader" title="Link to this heading"></a></h3>
+<p>YAML-based Input Loader for PyDessem Framework</p>
+<section id="id1">
+<h4>Summary<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>This module provides utility functions to read and validate
+case data from YAML files for the PyDessem framework. The
+data includes model metadata, sets, mappings, and parameters,
+which are required to build and solve hydrothermal scheduling
+problems in Pyomo.</p>
+</section>
+<section id="id2">
+<h4>Author<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>Augusto Mathias Adams &lt;<a class="reference external" href="mailto:augusto&#46;adams&#37;&#52;&#48;ufpr&#46;br">augusto<span>&#46;</span>adams<span>&#64;</span>ufpr<span>&#46;</span>br</a>&gt;</p>
+</section>
+<section id="id3">
+<h4>Contents<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>load_case: read and validate YAML case data.</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This module is part of the activities of the discipline
+EELT7030 - Short/Medium-Term Power System Operation Planning,
+Federal University of Paraná (UFPR), Brazil.</p>
+</section>
+<section id="id4">
+<h4>Dependencies<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>pathlib</p></li>
+<li><p>pyyaml</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydessem.io_loader.load_case">
+<span class="sig-prename descclassname"><span class="pre">pydessem.io_loader.</span></span><span class="sig-name descname"><span class="pre">load_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_yaml</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydessem/io_loader.html#load_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydessem.io_loader.load_case" title="Link to this definition"></a></dt>
+<dd><p>Load and validate case data from a YAML file.</p>
+<p>The function reads a YAML file containing model metadata,
+sets, mappings, and parameters, and returns its content
+as a Python dictionary. It ensures that the required
+top-level keys are present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path_yaml</strong> (<em>str</em>) – Path to the YAML file containing case data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with the parsed YAML content, including
+“meta”, “sets”, “map”, and “params” sections.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If any of the required keys (“meta”, “sets”, “map”, “params”)
+    are missing from the YAML file.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">load_case</span><span class="p">(</span><span class="s2">&quot;examples/case_tiny.yaml&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;meta&#39;, &#39;sets&#39;, &#39;map&#39;, &#39;params&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-pydessem.model_core">
+<span id="pydessem-model-core-module"></span><h2>pydessem.model_core module<a class="headerlink" href="#module-pydessem.model_core" title="Link to this heading"></a></h2>
+<section id="pydessem-core-model">
+<h3>PyDessem Core Model<a class="headerlink" href="#pydessem-core-model" title="Link to this heading"></a></h3>
+<p>Pyomo-based Mathematical Model for PyDessem.</p>
+<section id="id5">
+<h4>Summary<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>This module defines the core Pyomo model representing a didactic
+DESSEM-like short-term hydrothermal scheduling problem. It includes:</p>
+<ul class="simple">
+<li><p>Thermal unit commitment (UC) constraints.</p></li>
+<li><p>Hydropower production with piecewise-linear (PWL) curves.</p></li>
+<li><p>DC power flow and nodal balance.</p></li>
+<li><p>Reservoir continuity and spillage.</p></li>
+<li><p>Reserve requirements and costs.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>Author<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>Augusto Mathias Adams &lt;<a class="reference external" href="mailto:augusto&#46;adams&#37;&#52;&#48;ufpr&#46;br">augusto<span>&#46;</span>adams<span>&#64;</span>ufpr<span>&#46;</span>br</a>&gt;</p>
+</section>
+<section id="id7">
+<h4>Contents<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>build_model: construct the full Pyomo model from input data.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>Dependencies<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>pyomo.environ</p></li>
+<li><p>numpy (indirectly for value handling)</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydessem.model_core.build_model">
+<span class="sig-prename descclassname"><span class="pre">pydessem.model_core.</span></span><span class="sig-name descname"><span class="pre">build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydessem/model_core.html#build_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydessem.model_core.build_model" title="Link to this definition"></a></dt>
+<dd><p>Construct the Pyomo optimization model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>d</strong> (<em>dict</em>) – Dictionary with case data loaded from a YAML file, including:
+- meta: general metadata.
+- sets: sets of buses, generators, reservoirs, and lines.
+- map: mappings such as generator-to-bus and reservoir-to-gen.
+- params: model parameters (demands, costs, limits, UC settings).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Pyomo model object containing all decision variables,
+constraints, and the objective function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pyomo.environ.ConcreteModel</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Includes thermal UC logic (startup, shutdown, min up/down time).</p></li>
+<li><p>Uses Pyomo <cite>Piecewise</cite> for hydropower generation curves.</p></li>
+<li><p>Includes reserve requirements as additional constraints.</p></li>
+</ul>
+<p>This module is part of the activities of the discipline
+EELT7030 - Planejamento da Operação Eletroenergética de Médio/Curto Prazo,
+Federal University of Paraná (UFPR), Brazil.</p>
+</dd></dl>
+
+</section>
+<section id="module-pydessem.reporting">
+<span id="pydessem-reporting-module"></span><h2>pydessem.reporting module<a class="headerlink" href="#module-pydessem.reporting" title="Link to this heading"></a></h2>
+<section id="pydessem-reporting">
+<h3>PyDessem Reporting<a class="headerlink" href="#pydessem-reporting" title="Link to this heading"></a></h3>
+<p>Post-processing utilities for PyDessem results.</p>
+<section id="id9">
+<h4>Summary<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<p>This module provides basic functions for summarizing
+and presenting results from PyDessem simulations.</p>
+</section>
+<section id="id10">
+<h4>Author<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<p>Augusto Mathias Adams &lt;<a class="reference external" href="mailto:augusto&#46;adams&#37;&#52;&#48;ufpr&#46;br">augusto<span>&#46;</span>adams<span>&#64;</span>ufpr<span>&#46;</span>br</a>&gt;</p>
+</section>
+<section id="id11">
+<h4>Contents<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>summarize_dispatch: group generation by unit and time.</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This module is part of the activities of the discipline
+EELT7030 - Planejamento da Operação Eletroenergética de Médio/Curto Prazo,
+Federal University of Paraná (UFPR), Brazil.</p>
+</section>
+<section id="id12">
+<h4>Dependencies<a class="headerlink" href="#id12" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>collections</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydessem.reporting.summarize_dispatch">
+<span class="sig-prename descclassname"><span class="pre">pydessem.reporting.</span></span><span class="sig-name descname"><span class="pre">summarize_dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydessem/reporting.html#summarize_dispatch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydessem.reporting.summarize_dispatch" title="Link to this definition"></a></dt>
+<dd><p>Summarize generation dispatch by unit and time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> (<em>dict</em>) – Results dictionary returned by <cite>solve_case</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary mapping each generator to a sorted list
+of (time, generation) tuples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydessem.reporting</span><span class="w"> </span><span class="kn">import</span> <span class="n">summarize_dispatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">summary</span> <span class="o">=</span> <span class="n">summarize_dispatch</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">summary</span><span class="p">[</span><span class="s2">&quot;G1&quot;</span><span class="p">]</span>
+<span class="go">[(1, 20.0), (2, 25.0), ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-pydessem.solve">
+<span id="pydessem-solve-module"></span><h2>pydessem.solve module<a class="headerlink" href="#module-pydessem.solve" title="Link to this heading"></a></h2>
+<section id="pydessem-solver">
+<h3>PyDessem Solver<a class="headerlink" href="#pydessem-solver" title="Link to this heading"></a></h3>
+<p>Interface to Solve PyDessem Cases.</p>
+<section id="id13">
+<h4>Summary<a class="headerlink" href="#id13" title="Link to this heading"></a></h4>
+<p>This module integrates case loading and Pyomo model building with
+a solver call. It provides a simple API to solve a case and return
+structured results for post-processing.</p>
+</section>
+<section id="id14">
+<h4>Author<a class="headerlink" href="#id14" title="Link to this heading"></a></h4>
+<p>Augusto Mathias Adams &lt;<a class="reference external" href="mailto:augusto&#46;adams&#37;&#52;&#48;ufpr&#46;br">augusto<span>&#46;</span>adams<span>&#64;</span>ufpr<span>&#46;</span>br</a>&gt;</p>
+</section>
+<section id="id15">
+<h4>Contents<a class="headerlink" href="#id15" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>solve_case: load, build, solve, and return results.</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This module is part of the activities of the discipline
+EELT7030 - Planejamento da Operação Eletroenergética de Médio/Curto Prazo,
+Federal University of Paraná (UFPR), Brazil.</p>
+</section>
+<section id="id16">
+<h4>Dependencies<a class="headerlink" href="#id16" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>pyomo.environ</p></li>
+<li><p>pydessem.io_loader</p></li>
+<li><p>pydessem.model_core</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydessem.solve.solve_case">
+<span class="sig-prename descclassname"><span class="pre">pydessem.solve.</span></span><span class="sig-name descname"><span class="pre">solve_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_yaml</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'glpk'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydessem/solve.html#solve_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydessem.solve.solve_case" title="Link to this definition"></a></dt>
+<dd><p>Load, build, and solve a PyDessem case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_yaml</strong> (<em>str</em>) – Path to the YAML file describing the case.</p></li>
+<li><p><strong>solver_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the solver to be used. Default is “glpk”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>(out, model, data)
+- out : dict</p>
+<blockquote>
+<div><p>Results including objective value and variable series
+(generation, flows, volumes, reserves, etc.).</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>model<span class="classifier">pyomo.environ.ConcreteModel</span></dt><dd><p>The solved Pyomo model object.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>data<span class="classifier">dict</span></dt><dd><p>Original case data loaded from YAML.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires the specified solver to be installed and accessible.</p></li>
+<li><p>The output dictionary is designed for easy export to JSON.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="module-pydessem">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydessem" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="pydessem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Augusto Mathias Adams.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

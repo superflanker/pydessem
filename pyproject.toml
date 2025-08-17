@@ -7,17 +7,17 @@ name = "pydessem"
 version = "0.1.0"
 description = "Modelo didático tipo DESSEM em Pyomo (UC térmico, hidráulica PWL e reservas)."
 readme = "README.md"
-authors = [{name="Sr. (autor)", email="author@example.com"}]
-license = {text = "MIT"}
+authors = [{name="Augusto Mathias Adams", email="augusto.adams@ufpr.br"}]
+license = {text = "Gnu Public License 3.0"}
 requires-python = ">=3.9"
 dependencies = [
   "pyomo>=6.7",
   "pyyaml>=6.0.1",
-  "numpy>=1.24"
+  "numpy>=2.3.2"
 ]
 
 [project.urls]
-Homepage = "https://example.com/pydessem"
+Homepage = "https://github.com/superflanker/pydessem"
 
 [project.scripts]
 pydessem-solve = "pydessem.cli:main"

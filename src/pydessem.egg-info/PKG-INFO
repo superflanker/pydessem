@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: pydessem
+Version: 0.1.0
+Summary: Modelo didático tipo DESSEM em Pyomo (UC térmico, hidráulica PWL e reservas).
+Author-email: "Sr. (autor)" <author@example.com>
+License: MIT
+Project-URL: Homepage, https://example.com/pydessem
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyomo>=6.7
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: numpy>=1.24
+Dynamic: license-file
+
+# pydessem
+
+Modelo **didático** no espírito do DESSEM, implementado em **Pyomo**:
+
+- **UC térmico** (binárias `u/y/z`, custos no-load/partida/parada, MUT/MDT, rampas com SU/SD).
+- **Hidráulica PWL** (`Piecewise`) por reservatório com curva potência×vazão.
+- **Reservas** com requisito horário agregado e custo opcional de oferta.
+- **Rede DC**, balanço nodal, limites de linha e déficits/vertedura.
+
+> Este pacote é voltado a ensino/prototipagem. Não lê casos nativos do DESSEM.
+
+## Instalação
+```bash
+pip install -e .
+# ou
+pip install pydessem-0.1.0-py3-none-any.whl
+```
+
+## Uso rápido
+```bash
+pydessem-solve examples/case_tiny.yaml --solver glpk
+```
+
+## Estrutura de dados (YAML)
+Veja `examples/case_tiny.yaml`.
+
+## Saída
+O script imprime custo objetivo e tabelas principais. Para manipular via API:
+
+```python
+from pydessem.solve import solve_case
+out, model, data = solve_case("examples/case_tiny.yaml", solver_name="glpk")
+print(out["objective"])
+```

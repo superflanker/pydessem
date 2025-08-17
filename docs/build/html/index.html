@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyDESSEM documentation &mdash; pydessem 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pydessem" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            pydessem
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">pydessem</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">pydessem</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PyDESSEM documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pydessem-documentation">
+<h1>PyDESSEM documentation<a class="headerlink" href="#pydessem-documentation" title="Link to this heading"></a></h1>
+<p>Official documentation of the <strong>PyDESSEM</strong> project, a didatic DESSEM Wrapper based on Pyomo.</p>
+<section id="pydessem-didactic-hydrothermal-scheduling-with-pyomo">
+<h2>PyDessem: Didactic Hydrothermal Scheduling with Pyomo<a class="headerlink" href="#pydessem-didactic-hydrothermal-scheduling-with-pyomo" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
+<a class="reference external" href="https://github.com/superflanker/pydessem/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/superflanker/pydessem/actions/workflows/ci.yml/badge.svg" /></a>
+<a class="reference external" href="https://superflanker.github.io/pydessem/"><img alt="Docs" src="https://github.com/superflanker/pydessem/actions/workflows/docs.yml/badge.svg" /></a></p>
+<p>PyDessem is a Python package for <strong>short-term hydrothermal scheduling</strong> inspired by the <strong>DESSEM model</strong> (used in Brazil by ONS).
+It provides a <strong>didactic, modular, and extensible</strong> implementation using <a class="reference external" href="http://www.pyomo.org/">Pyomo</a> for optimization.</p>
+<hr class="docutils" />
+<section id="overview">
+<h3>🔍 Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>This project models a simplified <strong>hydrothermal system</strong> with:</p>
+<ul class="simple">
+<li><p><strong>DC power flow constraints</strong></p></li>
+<li><p><strong>Hydro reservoirs with piecewise production functions</strong></p></li>
+<li><p><strong>Thermal unit commitment (UC)</strong></p></li>
+<li><p><strong>Ramping constraints</strong></p></li>
+<li><p><strong>Reserves and penalties (load shedding, spillage)</strong></p></li>
+</ul>
+<p>The goal is to provide a <strong>clean teaching tool</strong> for courses such as <em>EELT7030 – Short/Medium-Term Power System Operation Planning</em>.</p>
+</section>
+<hr class="docutils" />
+<section id="main-components">
+<h3>📦 Main Components<a class="headerlink" href="#main-components" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">io_loader.py</span></code> – YAML/CSV input loader and validator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model_core.py</span></code> – Pyomo model builder (hydro, thermal, UC, DC flow).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solve.py</span></code> – Solver wrapper and post-processing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reporting.py</span></code> – Tables and plots for results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cli.py</span></code> – Command-line interface (<code class="docutils literal notranslate"><span class="pre">pydessem-solve</span></code>).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dependencies">
+<h3>🛠 Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<p>PyDessem relies on the following Python libraries:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/pyomo/">Pyomo</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/PyYAML/">PyYAML</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pandas/">Pandas</a> (optional, reporting)</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/matplotlib/">Matplotlib</a> (optional, reporting)</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/glpk/">GLPK</a> or another MILP solver (CBC, Gurobi, CPLEX, …)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="project-structure">
+<h3>📁 Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pydessem/
+├── pydessem/
+│   ├── __init__.py
+│   ├── io_loader.py
+│   ├── model_core.py
+│   ├── solve.py
+│   ├── reporting.py
+│   └── cli.py
+├── data/
+│   ├── inputs/
+│   │   └── case_tiny.yaml
+│   └── outputs/
+├── tests/
+│   └── test_solver.py
+├── LICENSE
+├── README.md
+└── setup.py
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="usage">
+<h3>▶️ Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h3>
+<p>Solve a case from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pydessem-solve<span class="w"> </span>data/inputs/case_tiny.yaml<span class="w"> </span>--solver<span class="w"> </span>glpk
+</pre></div>
+</div>
+<p>Output (human-readable):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Objective</span><span class="p">:</span> <span class="mf">1234.56</span>
+<span class="n">Generation</span> <span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">])</span> <span class="o">-</span> <span class="n">first</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="n">G1</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span> <span class="mf">20.00</span>
+   <span class="n">G2</span> <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span> <span class="mf">30.00</span>
+</pre></div>
+</div>
+<p>Output (JSON):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pydessem-solve<span class="w"> </span>data/inputs/case_tiny.yaml<span class="w"> </span>--solver<span class="w"> </span>glpk<span class="w"> </span>--json
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;objective&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1234.56</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;P&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;(&#39;G1&#39;, 0)&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;(&#39;G2&#39;, 0)&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">30.0</span><span class="p">,</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h3>📄 References<a class="headerlink" href="#references" title="Link to this heading"></a></h3>
+<p>This implementation is based on academic material from <strong>UFPR (Federal University of Paraná)</strong> and ONS:</p>
+<ul class="simple">
+<li><p>Clodomiro Unsihuay–Vila, <em>Introdução aos Sistemas de Energia Elétrica</em> (EELT7030, 2025)</p></li>
+<li><p>Clodomiro Unsihuay–Vila, <em>O Custo Marginal de Operação em Sistemas com Predominância Termoelétrica</em> (EELT7030, 2025)</p></li>
+<li><p>ONS, <em>DESSEM – Manual de Metodologia</em>, 2023</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="documentation">
+<h3>📚 Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h3>
+<p>Full API and usage documentation is built with <strong>Sphinx</strong> and available here:
+👉 <a class="reference external" href="https://superflanker.github.io/pydessem/">PyDessem Documentation</a></p>
+</section>
+<hr class="docutils" />
+<section id="how-to-cite">
+<h3>📚 How to Cite<a class="headerlink" href="#how-to-cite" title="Link to this heading"></a></h3>
+<p>If you use <strong>PyDessem</strong> in teaching or research, please cite:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">adams2025pydessem</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{Augusto Mathias Adams}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">{PyDessem: Didactic Hydrothermal Scheduling with Pyomo}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">{2025}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">howpublished</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{\url{https://github.com/superflanker/pydessem}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Main modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">pydessem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydessem.html">pydessem package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem.cli">pydessem.cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem-cli">PyDessem CLI</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#summary">Summary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#author">Author</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#contents">Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem.cli.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem.io_loader">pydessem.io_loader module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem-i-o-loader">PyDessem I/O Loader</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id1">Summary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id2">Author</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id3">Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id4">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem.io_loader.load_case"><code class="docutils literal notranslate"><span class="pre">load_case()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem.model_core">pydessem.model_core module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem-core-model">PyDessem Core Model</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id5">Summary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id6">Author</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id7">Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id8">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem.model_core.build_model"><code class="docutils literal notranslate"><span class="pre">build_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem.reporting">pydessem.reporting module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem-reporting">PyDessem Reporting</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id9">Summary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id10">Author</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id11">Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id12">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem.reporting.summarize_dispatch"><code class="docutils literal notranslate"><span class="pre">summarize_dispatch()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem.solve">pydessem.solve module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem-solver">PyDessem Solver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id13">Summary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id14">Author</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id15">Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pydessem.html#id16">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="pydessem.html#pydessem.solve.solve_case"><code class="docutils literal notranslate"><span class="pre">solve_case()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydessem.html#module-pydessem">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indexes">
+<h1>Indexes<a class="headerlink" href="#indexes" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-right" title="pydessem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Augusto Mathias Adams.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

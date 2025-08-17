@@ -1,4 +1,34 @@
-\
+"""
+PyDessem Core Model
+===================
+
+Pyomo-based Mathematical Model for PyDessem.
+
+Summary
+-------
+This module defines the core Pyomo model representing a didactic
+DESSEM-like short-term hydrothermal scheduling problem. It includes:
+
+- Thermal unit commitment (UC) constraints.
+- Hydropower production with piecewise-linear (PWL) curves.
+- DC power flow and nodal balance.
+- Reservoir continuity and spillage.
+- Reserve requirements and costs.
+
+Author
+------
+Augusto Mathias Adams <augusto.adams@ufpr.br>
+
+Contents
+--------
+- build_model: construct the full Pyomo model from input data.
+
+Dependencies
+------------
+- pyomo.environ
+- numpy (indirectly for value handling)
+"""
+
 from pyomo.environ import (
     ConcreteModel, Set, Param, Var,
     NonNegativeReals, Reals, Binary,
@@ -7,6 +37,34 @@ from pyomo.environ import (
 )
 
 def build_model(d: dict):
+    """
+    Construct the Pyomo optimization model.
+
+    Parameters
+    ----------
+    d : dict
+        Dictionary with case data loaded from a YAML file, including:
+        - meta: general metadata.
+        - sets: sets of buses, generators, reservoirs, and lines.
+        - map: mappings such as generator-to-bus and reservoir-to-gen.
+        - params: model parameters (demands, costs, limits, UC settings).
+
+    Returns
+    -------
+    pyomo.environ.ConcreteModel
+        A Pyomo model object containing all decision variables,
+        constraints, and the objective function.
+
+    Notes
+    -----
+    - Includes thermal UC logic (startup, shutdown, min up/down time).
+    - Uses Pyomo `Piecewise` for hydropower generation curves.
+    - Includes reserve requirements as additional constraints.
+
+    This module is part of the activities of the discipline
+    EELT7030 - Planejamento da Operação Eletroenergética de Médio/Curto Prazo,
+    Federal University of Paraná (UFPR), Brazil.
+    """
     m = ConcreteModel()
 
     # ----- Sets -----
