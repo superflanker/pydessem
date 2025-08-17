@@ -1,6 +1,6 @@
 # PyDessem: Didactic Hydrothermal Scheduling with Pyomo
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CI](https://github.com/superflanker/pydessem/actions/workflows/ci.yml/badge.svg)](https://github.com/superflanker/pydessem/actions/workflows/ci.yml)
 [![Docs](https://github.com/superflanker/pydessem/actions/workflows/docs.yml/badge.svg)](https://superflanker.github.io/pydessem/)
 
