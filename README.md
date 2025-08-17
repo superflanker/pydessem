@@ -63,7 +63,7 @@ pydessem/
 │   └── test_solver.py
 ├── LICENSE
 ├── README.md
-└── setup.py
+└── pyproject.toml
 ```
 
 ---
