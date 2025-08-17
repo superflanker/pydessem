@@ -40,13 +40,13 @@ jobs:
 
       - name: Build Sphinx HTML
         run: |
-          sphinx-build -b html docs docs/_build/html
-          echo "Built docs to docs/_build/html"
+          sphinx-build -b html docs docs/build/html
+          echo "Built docs to docs/build/html"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/_build/html
+          path: docs/build/html
 
   deploy:
     needs: build
