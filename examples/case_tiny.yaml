@@ -1,0 +1,98 @@
+meta:
+  name: "tiny-3bus-1res-uc"
+  horizon_hours: 6
+  base_mva: 100.0
+
+sets:
+  B: [B1, B2, B3]
+  G: [G1, G2]
+  GH: [G1]
+  GT: [G2]
+  R: [R1]
+  L:
+    - {name: L12, i: B1, j: B2}
+    - {name: L23, i: B2, j: B3}
+
+map:
+  gen_bus:
+    G1: B1
+    G2: B3
+  res_of_gen:
+    G1: R1
+  line_data:
+    L12: {b: 10.0, fmax: 100.0}
+    L23: {b: 8.0,  fmax: 80.0}
+
+params:
+  demand:
+    B1: [20, 25, 30, 25, 20, 20]
+    B2: [30, 30, 30, 30, 30, 30]
+    B3: [10, 10, 10, 15, 15, 15]
+
+  therm_cost:
+    G2: 120.0
+
+  g_min:
+    G1: 0.0
+    G2: 20.0
+  g_max:
+    G1: 70.0
+    G2: 100.0
+
+  ramp_up:
+    G1: 9999
+    G2: 40
+  ramp_dn:
+    G1: 9999
+    G2: 40
+
+  ref_bus: B1
+
+  vol_min:
+    R1: 50.0
+  vol_max:
+    R1: 200.0
+  vol0:
+    R1: 120.0
+  inflow:
+    R1: [2, 2, 2, 2, 2, 2]
+  q_min:
+    R1: 0.0
+  q_max:
+    R1: 60.0
+
+  hydro_pwl:
+    R1:
+      - {q: 0,  p: 0}
+      - {q: 20, p: 15}
+      - {q: 40, p: 35}
+      - {q: 60, p: 50}
+
+  penalties:
+    load_shed: 10000.0
+    spill: 0.0
+
+  uc:
+    no_load_cost:
+      G2: 50.0
+    startup_cost:
+      G2: 2000.0
+    shutdown_cost:
+      G2: 0.0
+    min_up_time:
+      G2: 2
+    min_down_time:
+      G2: 2
+    u0:
+      G2: 0
+    init_status:
+      G2: -1
+    startup_ramp:
+      G2: 100
+    shutdown_ramp:
+      G2: 100
+
+  reserves:
+    requirement: [10, 10, 10, 10, 10, 10]
+    cost:
+      G2: 30.0
